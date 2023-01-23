@@ -1,6 +1,54 @@
 h1 {
-  color: blue;
+  margin: 0;
+  padding: 0;
 }
+
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  color: blue;
+  color: gray;
+}
+
+.app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.app-ground {
+  border: 1px solid #3c4043;
+  border-radius: 5px;
+}
+
+.search-box {
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(128, 128, 128, 0.373);
+  border-radius: 10px;
+}
+.navigation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.navigation-item {
+  display: inline;
+  padding: 10px;
+}
+.time-location {
+  padding-left: 20px;
+  margin-left: 20px;
+}
+.weather-summary {
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(128, 128, 128, 0.373);
+  border-radius: 10px;
+}
+.weather-logo {
+  width: 60px;
+  display: inline;
 }
