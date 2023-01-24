@@ -11,36 +11,36 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://kit.fontawesome.com/2ea94c071b.css"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styling.css" />
     <title>vanilla-weather-app</title>
   </head>
   <body>
     <div class="container">
       <div class="app-wrapper">
-        <div class="app-ground">
-          <div class="search-box">
-            <div class="navigation-bar">
-              <ul class="navigation-list">
-                <li class="navigation-item">Paris</li>
-                <li class="navigation-item">London</li>
-                <li class="navigation-item">Tokyo</li>
-                <li class="navigation-item">Berlin</li>
-                <li class="navigation-item">Istanbul</li>
-              </ul>
+        <div class="app-body">
+          <div class="search-bar">
+            <div class="input-box">
+              <input
+                type="text"
+                id="input-city"
+                placeholder="Enter the city"
+                autocomplete="off"
+              />
             </div>
-            <div class="search-bar">
-              <form action="" class="search">
-                <input
-                  type="text"
-                  name=""
-                  id="input-city"
-                  placeholder="Enter the city"
-                  autocomplete="off"
-                />
-                <input type="submit" name="search" class="btn btn-primary" />
-              </form>
-            </div>
+            <button class="submit">🔍</button>
           </div>
+
           <div class="time-location">
             <h1>Tehran</h1>
             <h6>Friday, 15:45</h6>

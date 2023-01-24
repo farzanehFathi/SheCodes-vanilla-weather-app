@@ -17,27 +17,49 @@ h6 {
   margin: 30px auto;
 }
 
-.app-ground {
+.app-body {
   border: 1px solid #3c4043;
   border-radius: 5px;
 }
 
-.search-box {
-  padding: 20px;
+.search-bar {
   margin: 20px;
-  background-color: rgba(128, 128, 128, 0.373);
-  border-radius: 10px;
+  border-radius: 20px;
+  border: 1px solid #eef9ff;
+  box-shadow: 1px 1px 1px 1px #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
-.navigation-list {
-  list-style: none;
-  padding: 0;
+
+.input-box {
+  height: 40px;
+  width: 100%;
+  display: flex;
+
+  border-radius: 20px 0 0 20px;
+  padding: 5px;
+}
+
+input {
+  background: transparent;
+  width: 100%;
+  border: none;
   margin: 0;
-  margin-bottom: 20px;
+  padding-left: 20px;
+  outline: 0;
+  word-wrap: break-word;
 }
-.navigation-item {
+button {
+  border-radius: 0 20px 20px 0;
+  background-color: transparent;
+  height: 40px;
+  width: 60px;
+  margin: 0;
   display: inline;
-  padding: 10px;
+  border: none;
 }
+
 .time-location {
   padding-left: 20px;
   margin-left: 20px;
