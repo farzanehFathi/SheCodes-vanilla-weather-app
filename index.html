@@ -11,11 +11,6 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://kit.fontawesome.com/2ea94c071b.css"
-      crossorigin="anonymous"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,16 +36,23 @@
             <button class="submit">🔍</button>
           </div>
 
-          <div class="time-location">
+          <div class="overview">
             <h1>Tehran</h1>
             <h6>Friday, 15:45</h6>
             <h6>Clear</h6>
           </div>
-          <div class="weather-summary">
+          <div class="summary">
             <div class="row">
               <div class="col-6">
-                <img class="weather-logo" src="imgs/sun.png" alt="" />
-                6 °C | °F
+                <div class="temperature-summary">
+                  <img
+                    class="float-left weather-logo"
+                    src="imgs/sun.png"
+                    alt="clear"
+                  />
+                  <strong>6</strong>
+                  <small class="units">°C | <a href="#"> °F</a></small>
+                </div>
               </div>
               <div class="col-6">
                 <h6>Feels-Like: 5°C</h6>
@@ -62,10 +64,15 @@
 
           <div class="forecast"></div>
         </div>
-        <a href="https://github.com/farzanehFathi/vanilla-weather-app">
-          Open-source code
-        </a>
-        by Farzaneh Fathi
+        <small>
+          <a
+            href="https://github.com/farzanehFathi/vanilla-weather-app"
+            target="_blank"
+          >
+            Open-source code
+          </a>
+          by Farzaneh Fathi
+        </small>
       </div>
     </div>
   </body>
