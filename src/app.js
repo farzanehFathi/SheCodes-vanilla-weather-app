@@ -50,9 +50,20 @@ function displaytemp(respond) {
   );
 }
 
-let apiKey = "32e12816b7e874a17bd13105b642a985";
-let city = "rasht";
-let unit = "metric";
-let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+function search(city) {
+  let apiKey = "32e12816b7e874a17bd13105b642a985";
+  let unit = "metric";
+  let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
-axios.get(Url).then(displaytemp);
+  axios.get(Url).then(displaytemp);
+}
+
+function handleButton(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#input-city").value;
+  search(cityInput);
+}
+let form = document.querySelector("#search");
+form.addEventListener("submit", handleButton);
+
+search("London");

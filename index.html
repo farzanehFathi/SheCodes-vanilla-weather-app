@@ -27,15 +27,30 @@
         <div class="app-ground">
           <!-- Search Bar -->
           <div class="search-bar">
-            <div class="input-box">
-              <input
-                type="text"
-                id="input-city"
-                placeholder="Enter the city"
-                autocomplete="off"
-              />
-            </div>
-            <button class="submit">🔍</button>
+            <form id="search">
+              <div class="row gx-0">
+                <div class="col-10 gx-0 input-box">
+                  <input
+                    type="search"
+                    class="text-input"
+                    id="input-city"
+                    placeholder="Enter the city"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="submit"
+                    class="input-button"
+                    value="&#x1F50E;&#xFE0E;"
+                    name="searchbox"
+                    id="submit-button"
+                  />
+                </div>
+              </div>
+            </form>
+
+            <!-- <button class="submit">🔍</button> -->
           </div>
           <!-- Overview -->
           <div class="overview">

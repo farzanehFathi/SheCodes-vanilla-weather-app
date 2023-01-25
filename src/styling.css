@@ -33,36 +33,36 @@ h6 {
 .search-bar {
   margin: 20px;
   border-radius: 20px;
-  border: 1px solid #dadde1;
-  display: flex;
-  align-items: center;
-  justify-items: center;
+  /* border: 1px solid #dadde1; */
 }
 
 .search-bar .input-box {
+  border-radius: 20px 0 0 20px;
   height: 40px;
-  width: 100%;
-  display: flex;
-  padding: 5px;
+  padding: 5px 5px 5px 20px;
+  /* padding-bottom: 4px; */
+  border: 1px solid #dadde1;
 }
 
-.search-bar input {
+.search-bar .text-input {
   background: transparent;
-  width: 100%;
   border: none;
+  width: 100%;
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
   outline: 0;
   word-wrap: break-word;
+  text-align: inherit;
+  color: hsl(0deg 0% 7%);
 }
-.search-bar button {
+.search-bar .input-button {
   border-radius: 0 20px 20px 0;
-  background-color: transparent;
+  background-color: #f0f0f0;
   height: 40px;
-  width: 60px;
+  width: 100%;
   margin: 0;
-  display: inline;
-  border: none;
+  padding: 0;
+  border: 1px solid #dadde1;
 }
 
 .overview {
