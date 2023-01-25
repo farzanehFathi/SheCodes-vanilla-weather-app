@@ -23,13 +23,17 @@ function formatDate(timestamp) {
 }
 
 function displaytemp(respond) {
+  let iconCode = respond.data.weather[0].icon;
+  let description = respond.data.weather[0].main;
+  let iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+  document.querySelector("#description").innerHTML = description;
+  document.querySelector("#weather-icon").setAttribute("src", iconUrl);
+  document.querySelector("#weather-icon").setAttribute("alt", description);
   document.querySelector("#temperature").innerHTML = Math.round(
     respond.data.main.temp
   );
   document.querySelector("#city-name").innerHTML = respond.data.name;
-
-  document.querySelector("#description").innerHTML =
-    respond.data.weather[0].main;
 
   document.querySelector("#feels-like").innerHTML = Math.round(
     respond.data.main.feels_like
@@ -47,7 +51,7 @@ function displaytemp(respond) {
 }
 
 let apiKey = "32e12816b7e874a17bd13105b642a985";
-let city = "london";
+let city = "rasht";
 let unit = "metric";
 let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
