@@ -16,7 +16,6 @@ h6 {
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
-  text-transform: capitalize;
   margin: 0;
   padding: 0;
 }
@@ -26,7 +25,7 @@ h6 {
   margin: 30px auto;
 }
 
-.app-body {
+.app-ground {
   border: 1px solid #dadde1;
   border-radius: 5px;
 }
@@ -80,6 +79,9 @@ h6 {
   display: flex;
   align-items: top;
   justify-items: center;
+}
+.temperature-summary a {
+  text-decoration: none;
 }
 
 .temperature-summary img {

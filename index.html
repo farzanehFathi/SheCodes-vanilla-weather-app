@@ -24,7 +24,8 @@
   <body>
     <div class="container">
       <div class="app-wrapper">
-        <div class="app-body">
+        <div class="app-ground">
+          <!-- Search Bar -->
           <div class="search-bar">
             <div class="input-box">
               <input
@@ -36,14 +37,18 @@
             </div>
             <button class="submit">🔍</button>
           </div>
-
+          <!-- Overview -->
           <div class="overview">
             <h1 id="city-name"></h1>
-            <h6>Friday, 15:45</h6>
+
             <h6 id="description"></h6>
+            <h6>Last updated: <span id="date"></span></h6>
           </div>
+
+          <!-- Weather Summary -->
           <div class="summary">
             <div class="row">
+              <!-- Weather Summary: Temperature-->
               <div class="col-6">
                 <div class="temperature-summary">
                   <img
@@ -55,6 +60,7 @@
                   <small class="units">°C | <a href="#"> °F</a></small>
                 </div>
               </div>
+              <!-- Weather Summary: Other weather elements-->
               <div class="col-6">
                 <h6>Feels-Like: <span id="feels-like"></span>°C</h6>
                 <h6>Humidity: <span id="humidity"></span>%</h6>
@@ -62,9 +68,10 @@
               </div>
             </div>
           </div>
-
+          <!-- ForeCast-->
           <div class="forecast"></div>
         </div>
+        <!-- Note-->
         <small>
           <a
             href="https://github.com/farzanehFathi/vanilla-weather-app"
