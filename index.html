@@ -25,11 +25,10 @@
     <div class="container">
       <div class="app-wrapper">
         <div class="app-ground">
-          <!-- Search Bar -->
           <div class="search-bar">
             <form id="search">
               <div class="row gx-0">
-                <div class="col-10 gx-0 input-box">
+                <div class="col-10 input-box">
                   <input
                     type="search"
                     class="text-input"
@@ -43,46 +42,44 @@
                     type="submit"
                     class="input-button"
                     value="&#x1F50E;&#xFE0E;"
-                    name="searchbox"
+                    name="search"
                     id="submit-button"
                   />
                 </div>
               </div>
             </form>
-
-            <!-- <button class="submit">🔍</button> -->
           </div>
-          <!-- Overview -->
+
           <div class="overview">
             <h1 id="city-name"></h1>
-
             <h6 id="description"></h6>
             <h6>Last updated: <span id="date"></span></h6>
           </div>
 
-          <!-- Weather Summary -->
           <div class="summary">
             <div class="row">
-              <!-- Weather Summary: Temperature-->
               <div class="col-6">
                 <div class="temperature-summary">
                   <img id="weather-icon" src="" alt="" />
                   <strong id="temperature"></strong>
-                  <small class="units">°C | <a href="#"> °F</a></small>
+                  <small class="units">
+                    <a href="#" id="to-celsius" class="deactive">°C </a> |
+                    <a href="#" id="to-fahrenheit">°F</a>
+                  </small>
                 </div>
               </div>
-              <!-- Weather Summary: Other weather elements-->
+
               <div class="col-6">
-                <h6>Feels-Like: <span id="feels-like"></span>°C</h6>
+                <h6>Feels-Like: <span id="feels-like"></span></h6>
                 <h6>Humidity: <span id="humidity"></span>%</h6>
-                <h6>Wind: <span id="wind-speed"></span> Km/h</h6>
+                <h6>Wind: <span id="wind-speed"></span></h6>
               </div>
             </div>
           </div>
-          <!-- ForeCast-->
+
           <div class="forecast"></div>
         </div>
-        <!-- Note-->
+
         <small>
           <a
             href="https://github.com/farzanehFathi/vanilla-weather-app"
