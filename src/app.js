@@ -22,6 +22,22 @@ function formatDate(timestamp) {
   return `${weekDays[dayNumber]}. ${hour}:${minute}`;
 }
 
+function nightMode(isNight) {
+  if (isNight) {
+    console.log("it is night");
+  } else {
+    console.log("it is not night");
+    city = document.querySelector("#city-name");
+    temp = document.querySelector("#temperature");
+    body = document.querySelector("body");
+    console.log(text2);
+    console.log(text);
+    body.classList.add("night-mode");
+    city.classList.add("night-mode-text");
+    city.classList.add("night-mode-text");
+  }
+}
+
 function updateWeather(respond) {
   //Update Icon
   let iconCode = respond.data.weather[0].icon;
@@ -57,6 +73,10 @@ function updateWeather(respond) {
   celsiusTemperature = respond.data.main.temp;
   feelsLike = respond.data.main.feels_like;
   windSpeed = respond.data.wind.speed;
+
+  //Night mode
+  isNight = respond.data.dt > respond.data.sys.sunset;
+  nightMode(isNight);
 }
 
 function search(city) {
@@ -74,11 +94,6 @@ function handleSubmitButton(event) {
   document.querySelector("#input-city").value = null;
 }
 
-let form = document.querySelector("#search");
-form.addEventListener("submit", handleSubmitButton);
-
-search("London");
-
 function toFahrenheit(event) {
   event.preventDefault();
   fahrenheitLink.classList.add("deactive");
@@ -90,7 +105,7 @@ function toFahrenheit(event) {
     Math.round((feelsLike * 9) / 5) + 32
   }°F`;
   document.querySelector("#wind-speed").innerHTML = `${Math.round(
-    windSpeed / 1609
+    windSpeed / 1.609
   )} mph`;
 }
 
@@ -109,10 +124,18 @@ function toCelsius(event) {
   )} Km/h`;
 }
 
+// Search form
+let form = document.querySelector("#search");
+form.addEventListener("submit", handleSubmitButton);
+
+search("London");
+
+// Define global pars
 let celsiusTemperature = document.querySelector("#temperature").innerHTML;
 let feelsLike = document.querySelector("#feels-like").innerHTML;
 let windSpeed = document.querySelector("#wind-speed").innerHTML;
 
+// Converting units
 let fahrenheitLink = document.querySelector("#to-fahrenheit");
 fahrenheitLink.addEventListener("click", toFahrenheit);
 

@@ -3,12 +3,6 @@ body {
   color: #878787;
 }
 
-.night-mode {
-  background-color: #202124;
-  color: #e8eaed;
-  color: #9aa0a6;
-}
-
 h1 {
   color: #202124;
   font-size: 22px;
@@ -115,4 +109,12 @@ h6 {
 .temperature-summary .deactive {
   color: #202124;
   cursor: text;
+}
+
+.night-mode {
+  background-color: #202124;
+  color: #9aa0a6;
+}
+.night-mode-text {
+  color: #e8eaed;
 }
