@@ -73,7 +73,7 @@ function formatIcons(icon) {
   ];
   iconCode = CodeList[iconList.indexOf(icon)];
 
-  return `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 }
 
 function displayForecast(respond) {
@@ -115,7 +115,7 @@ function updateWeather(respond) {
   //Update Icon
   let iconCode = respond.data.weather[0].icon;
   let description = respond.data.weather[0].main;
-  let iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
   document.querySelector("#weather-icon").setAttribute("src", iconUrl);
   document.querySelector("#weather-icon").setAttribute("alt", description);
 
