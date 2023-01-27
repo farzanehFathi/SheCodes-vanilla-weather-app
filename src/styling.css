@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #878787;
+  color: #70757a;
 }
 
 h1 {
@@ -103,7 +103,7 @@ h6 {
 
 .temperature-summary a {
   text-decoration: none;
-  color: #878787;
+  color: #70757a;
 }
 
 .temperature-summary .deactive {
@@ -117,4 +117,41 @@ h6 {
 }
 .night-mode-text {
   color: #e8eaed;
+}
+
+.forecast {
+  text-align: center;
+  margin: 10px 20px 10px 20px;
+}
+
+.forecast img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+}
+.forecast .forecast-block {
+  border-radius: 10px;
+  margin-right: 7px;
+  height: 95px;
+}
+
+.forecast-block:hover {
+  background-color: #f8f9fa;
+}
+
+.forecast .forecast-day {
+  font-size: 16px;
+  color: #202124;
+  margin-top: 7px;
+  line-height: 15px;
+}
+
+.forecast .forecast-temp-max {
+  font-size: 13px;
+  color: #202124;
+}
+
+.forecast .forecast-temp-min {
+  font-size: 13px;
 }

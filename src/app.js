@@ -22,21 +22,20 @@ function formatDate(timestamp) {
   return `${weekDays[dayNumber]}. ${hour}:${minute}`;
 }
 
-function nightMode(isNight) {
-  if (isNight) {
-    console.log("it is night");
-  } else {
-    console.log("it is not night");
-    city = document.querySelector("#city-name");
-    temp = document.querySelector("#temperature");
-    body = document.querySelector("body");
-    console.log(text2);
-    console.log(text);
-    body.classList.add("night-mode");
-    city.classList.add("night-mode-text");
-    city.classList.add("night-mode-text");
-  }
-}
+// function nightMode(isNight) {
+//   if (isNight) {
+//     console.log("it is night");
+//   } else {
+//     console.log("it is not night");
+//     city = document.querySelector("#city-name");
+//     temp = document.querySelector("#temperature");
+//     body = document.querySelector("body");
+
+//     body.classList.add("night-mode");
+//     city.classList.add("night-mode-text");
+//     city.classList.add("night-mode-text");
+//   }
+// }
 
 function updateWeather(respond) {
   //Update Icon
@@ -74,9 +73,9 @@ function updateWeather(respond) {
   feelsLike = respond.data.main.feels_like;
   windSpeed = respond.data.wind.speed;
 
-  //Night mode
-  isNight = respond.data.dt > respond.data.sys.sunset;
-  nightMode(isNight);
+  //Night mode ---- Bug
+  // isNight = respond.data.dt > respond.data.sys.sunset;
+  // nightMode(isNight);
 }
 
 function search(city) {
