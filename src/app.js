@@ -22,6 +22,31 @@ function formatDate(timestamp) {
   return `${weekDays[dayNumber]}. ${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecastDays = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastRow = document.querySelector("#forecast-row");
+  let forecastElement = "";
+  forecastDays.forEach(function (day) {
+    forecastElement =
+      forecastElement +
+      `<div class="col-2 forecast-block">
+                <div class="forecast-day">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/04n@2x.png"
+                  alt=""
+                  class="forecast-icon"
+                />
+                <div>
+                  <span class="forecast-temp-max">18°</span>
+                  <span class="forecast-temp-min">12°</span>
+                </div>
+                         </div>`;
+  });
+  forecastRow.innerHTML = forecastElement;
+}
+
+displayForecast();
+
 // function nightMode(isNight) {
 //   if (isNight) {
 //     console.log("it is night");
