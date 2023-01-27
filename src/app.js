@@ -22,7 +22,9 @@ function formatDate(timestamp) {
   return `${weekDays[dayNumber]}. ${hour}:${minute}`;
 }
 
-function displayForecast() {
+function displayForecast(respond) {
+  console.log(respond);
+
   let forecastDays = ["Fri", "Sat", "Sun", "Mon", "Tue"];
   let forecastRow = document.querySelector("#forecast-row");
   let forecastElement = "";
@@ -45,22 +47,12 @@ function displayForecast() {
   forecastRow.innerHTML = forecastElement;
 }
 
-displayForecast();
+function getForecast(coord) {
+  let apiKey = "32e12816b7e874a17bd13105b642a985";
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
 
-// function nightMode(isNight) {
-//   if (isNight) {
-//     console.log("it is night");
-//   } else {
-//     console.log("it is not night");
-//     city = document.querySelector("#city-name");
-//     temp = document.querySelector("#temperature");
-//     body = document.querySelector("body");
-
-//     body.classList.add("night-mode");
-//     city.classList.add("night-mode-text");
-//     city.classList.add("night-mode-text");
-//   }
-// }
+  axios.get(apiURL).then(displayForecast);
+}
 
 function updateWeather(respond) {
   //Update Icon
@@ -92,6 +84,9 @@ function updateWeather(respond) {
   document.querySelector("#date").innerHTML = formatDate(
     respond.data.dt * 1000
   );
+
+  //Send date for getForecast function
+  getForecast(respond.data.coord);
 
   //Update global pars
   celsiusTemperature = respond.data.main.temp;
@@ -165,3 +160,18 @@ fahrenheitLink.addEventListener("click", toFahrenheit);
 
 let celsiusLink = document.querySelector("#to-celsius");
 celsiusLink.addEventListener("click", toCelsius);
+
+// function nightMode(isNight) {
+//   if (isNight) {
+//     console.log("it is night");
+//   } else {
+//     console.log("it is not night");
+//     city = document.querySelector("#city-name");
+//     temp = document.querySelector("#temperature");
+//     body = document.querySelector("body");
+
+//     body.classList.add("night-mode");
+//     city.classList.add("night-mode-text");
+//     city.classList.add("night-mode-text");
+//   }
+// }
