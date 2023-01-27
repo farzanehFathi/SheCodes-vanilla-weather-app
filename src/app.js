@@ -22,34 +22,91 @@ function formatDate(timestamp) {
   return `${weekDays[dayNumber]}. ${hour}:${minute}`;
 }
 
-function displayForecast(respond) {
-  console.log(respond);
+function formatDay(timestamp) {
+  date = new Date(timestamp * 1000);
+  dayNumber = date.getDay();
+  weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return `${weekDays[dayNumber]}`;
+}
 
-  let forecastDays = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+function formatIcons(icon) {
+  let iconList = [
+    "clear-sky-day",
+    "few-clouds-day",
+    "scattered-clouds-day",
+    "broken-clouds-day",
+    "shower-rain-day",
+    "rain-day",
+    "thunderstorm-day",
+    "snow-day",
+    "mist-day",
+    "clear-sky-night",
+    "few-clouds-night",
+    "scattered-clouds-night",
+    "broken-clouds-night",
+    "shower-rain-night",
+    "rain-night",
+    "thunderstorm-night",
+    "snow-night",
+    "mist-night",
+  ];
+
+  let CodeList = [
+    "01d",
+    "02d",
+    "03d",
+    "04d",
+    "09d",
+    "10d",
+    "11d",
+    "13d",
+    "50d",
+    "01n",
+    "02n",
+    "03n",
+    "04n",
+    "09n",
+    "10n",
+    "11n",
+    "13n",
+    "50n",
+  ];
+  iconCode = CodeList[iconList.indexOf(icon)];
+
+  return `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+}
+
+function displayForecast(respond) {
+  let forecastDays = respond.data.daily.slice(0, 5);
   let forecastRow = document.querySelector("#forecast-row");
   let forecastElement = "";
   forecastDays.forEach(function (day) {
     forecastElement =
       forecastElement +
       `<div class="col-2 forecast-block">
-                <div class="forecast-day">${day}</div>
+                <div class="forecast-day">${formatDay(day.time)}</div>
                 <img
-                  src="http://openweathermap.org/img/wn/04n@2x.png"
-                  alt=""
+                  src=${formatIcons(day.condition.icon)}
+                  alt=${day.condition.description}
                   class="forecast-icon"
                 />
                 <div>
-                  <span class="forecast-temp-max">18°</span>
-                  <span class="forecast-temp-min">12°</span>
+                  <span class="forecast-temp-max">${Math.round(
+                    day.temperature.maximum
+                  )}°</span>
+                  <span class="forecast-temp-min">${Math.round(
+                    day.temperature.minimum
+                  )}°</span>
                 </div>
                          </div>`;
   });
   forecastRow.innerHTML = forecastElement;
 }
 
-function getForecast(coord) {
-  let apiKey = "32e12816b7e874a17bd13105b642a985";
-  apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
+function getForecast(city) {
+  //data from sheCodes
+  apiKey = "0c78073fed5355o034190aeb4t4430f6";
+  apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiURL).then(displayForecast);
 }
@@ -86,7 +143,7 @@ function updateWeather(respond) {
   );
 
   //Send date for getForecast function
-  getForecast(respond.data.coord);
+  getForecast(respond.data.name);
 
   //Update global pars
   celsiusTemperature = respond.data.main.temp;
